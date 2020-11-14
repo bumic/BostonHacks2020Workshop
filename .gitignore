@@ -1,2 +1,3 @@
-.model_store/
-.serve/
+model_store/
+serve/
+.idea/
