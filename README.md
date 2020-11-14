@@ -95,7 +95,7 @@ You can also create model stores to store your archived models.
     torch-model-archiver --model-name densenet161 --version 1.0 --model-file ./serve/examples/image_classifier/densenet_161/model.py --serialized-file densenet161-8d451a50.pth --export-path model_store --extra-files ./serve/examples/image_classifier/index_to_name.json --handler image_classifier
     ```
 
-For more information about the model archiver, see [Torch Model archiver for TorchServe](model-archiver/README.md)
+For more information about the model archiver, see [Torch Model archiver for TorchServe](https://github.com/pytorch/serve/blob/master/model-archiver/README.md)
 
 ### Start TorchServe to serve the model
 
@@ -120,7 +120,7 @@ Complete the following steps:
   and use the  `-o` flag to name it `kitten.jpg` for you.
 * Use `curl` to send `POST` to the TorchServe `predict` endpoint with the kitten's image.
 
-![kitten](docs/images/kitten_small.jpg)
+![kitten](https://github.com/pytorch/serve/blob/master/docs/images/kitten_small.jpg)
 
 The following code completes all three steps:
 
@@ -176,14 +176,14 @@ ValueToSet = (Number of Hardware GPUs) / (Number of Unique Models)
 
 
 ## Quick Start with Docker
-Refer [torchserve docker](docker/README.md) for details.
+Refer [torchserve docker](https://github.com/pytorch/serve/blob/master/docker/README.md) for details.
 
 ## Learn More
 
-* [Full documentation on TorchServe](docs/README.md)
-* [Manage models API](docs/management_api.md)
-* [Inference API](docs/inference_api.md)
-* [Package models for use with TorchServe](model-archiver/README.md)
-* [TorchServe model zoo for pre-trained and pre-packaged models-archives](docs/model_zoo.md)
+* [Full documentation on TorchServe](https://github.com/pytorch/serve/blob/master/docs/README.md)
+* [Manage models API](https://github.com/pytorch/serve/blob/master/docs/management_api.md)
+* [Inference API](https://github.com/pytorch/serve/blob/master/docs/inference_api.md)
+* [Package models for use with TorchServe](https://github.com/pytorch/serve/blob/master/model-archiver/README.md)
+* [TorchServe model zoo for pre-trained and pre-packaged models-archives](https://github.com/pytorch/serve/blob/master/docs/model_zoo.md)
 
 
