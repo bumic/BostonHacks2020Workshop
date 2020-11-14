@@ -94,6 +94,17 @@ You can also create model stores to store your archived models.
     ```bash
     torch-model-archiver --model-name densenet161 --version 1.0 --model-file ./serve/examples/image_classifier/densenet_161/model.py --serialized-file densenet161-8d451a50.pth --export-path model_store --extra-files ./serve/examples/image_classifier/index_to_name.json --handler image_classifier
     ```
+    Commented:
+    ```bash
+    torch-model-archiver \
+        --model-name densenet161 `#model name` \
+        --version 1.0 `#version number of the model (increase with new versions)` \
+        --model-file ./serve/examples/image_classifier/densenet_161/model.py `#python class which loads the model weights` \
+        --serialized-file densenet161-8d451a50.pth `#model weights` \
+        --export-path model_store `#path to store the exported model` \
+        --extra-files ./serve/examples/image_classifier/index_to_name.json `#stores class labels for imagenet` \
+        --handler image_classifier `#tells torchserve to use the image classifier API`
+    ```
 
 For more information about the model archiver, see [Torch Model archiver for TorchServe](https://github.com/pytorch/serve/blob/master/model-archiver/README.md)
 
