@@ -25,9 +25,8 @@ Read more about TorchServe at their [official github repository](https://github.
     ```
    
    For Windows:  
-   Windows is not officially supported yet (as of 11/14/2020). Check this pull request https://github.com/pytorch/serve/pull/662  
-   For installation follow: https://github.com/pytorch/serve/blob/issue_582/docs/torchserve_on_win_native.md  
-   When doing so, make sure to checkout the correct branch and install from source. `git checkout issue_582`
+   Windows is not officially supported yet (as of 11/14/2020). 
+   Wait until this pull request is merged: https://github.com/pytorch/serve/pull/662
 
 2. Install python pre-requisite packages
 
