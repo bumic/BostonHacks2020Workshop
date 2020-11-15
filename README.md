@@ -9,7 +9,7 @@ TorchServe decouples your expensive PyTorch code from your application via API c
 and allows your team to work independently of the machine learning engineer.
 Read more about TorchServe at their [official github repository](https://github.com/pytorch/serve).
 
-## [Install the Prerequisites](https://github.com/pytorch/serve#install-torchserve)
+## Install the Prerequisites
 
 1. Install Java 11
 
@@ -24,8 +24,10 @@ Read more about TorchServe at their [official github repository](https://github.
     brew cask install adoptopenjdk11
     ```
    
-   For Windows  
-   Install from https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
+   For Windows:  
+   Windows is not officially supported yet (as of 11/14/2020). Check this pull request https://github.com/pytorch/serve/pull/662  
+   For installation follow: https://github.com/pytorch/serve/blob/issue_582/docs/torchserve_on_win_native.md  
+   When doing so, make sure to checkout the correct branch and install from source. `git checkout issue_582`
 
 2. Install python pre-requisite packages
 
@@ -61,7 +63,8 @@ Now you are ready to [package and serve models with TorchServe](#serve-a-model).
 
 ## Serve a model
 
-This section shows a simple example of serving a model with TorchServe. To complete this example, you must have already [installed TorchServe and the model archiver](#install-with-pip).
+This section shows a simple example of serving a model with TorchServe. To complete this example, 
+you must have already [installed TorchServe and the model archiver](https://github.com/pytorch/serve#install-with-pip).
 
 To run this example, clone the TorchServe repository:
 
@@ -118,7 +121,15 @@ torchserve --start --ncs --model-store model_store --models densenet161.mar
 
 After you execute the `torchserve` command above, TorchServe runs on your host, listening for inference requests.
 
-**Note**: If you specify model(s) when you run TorchServe, it automatically scales backend workers to the number equal to available vCPUs (if you run on a CPU instance) or to the number of available GPUs (if you run on a GPU instance). In case of powerful hosts with a lot of compute resoures (vCPUs or GPUs), this start up and autoscaling process might take considerable time. If you want to minimize TorchServe start up time you should avoid registering and scaling the model during start up time and move that to a later point by using corresponding [Management API](docs/management_api.md#register-a-model), which allows finer grain control of the resources that are allocated for any particular model).
+**Note**: If you specify model(s) when you run TorchServe, 
+it automatically scales backend workers to the number equal to available vCPUs (if you run on a CPU instance) 
+or to the number of available GPUs (if you run on a GPU instance). 
+In case of powerful hosts with a lot of compute resoures (vCPUs or GPUs), 
+this start up and autoscaling process might take considerable time. 
+If you want to minimize TorchServe start up time you should avoid registering and scaling the model during start up time 
+and move that to a later point by using corresponding 
+[Management API](https://github.com/pytorch/serve/blob/master/docs/management_api.md#register-a-model), 
+which allows finer grain control of the resources that are allocated for any particular model).
 
 ### Get predictions from a model
 
@@ -162,9 +173,12 @@ The predict endpoint returns a prediction response in JSON. It will look somethi
 ]
 ```
 
-You will see this result in the response to your `curl` call to the predict endpoint, and in the server logs in the terminal window running TorchServe. It's also being [logged locally with metrics](docs/metrics.md).
+You will see this result in the response to your `curl` call to the predict endpoint, 
+and in the server logs in the terminal window running TorchServe. 
+It's also being [logged locally with metrics](https://github.com/pytorch/serve/blob/master/docs/metrics.md).
 
-Now you've seen how easy it can be to serve a deep learning model with TorchServe! [Would you like to know more?](docs/server.md)
+Now you've seen how easy it can be to serve a deep learning model with TorchServe! 
+[Would you like to know more?](https://github.com/pytorch/serve/blob/master/docs/server.md)
 
 ### Stop the running TorchServe
 
