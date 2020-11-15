@@ -176,6 +176,11 @@ You will see this result in the response to your `curl` call to the predict endp
 and in the server logs in the terminal window running TorchServe. 
 It's also being [logged locally with metrics](https://github.com/pytorch/serve/blob/master/docs/metrics.md).
 
+You can also do the same thing in python with `example_app.py` using the `requests` module.
+```bash
+python example_app.py
+```
+
 Now you've seen how easy it can be to serve a deep learning model with TorchServe! 
 [Would you like to know more?](https://github.com/pytorch/serve/blob/master/docs/server.md)
 
